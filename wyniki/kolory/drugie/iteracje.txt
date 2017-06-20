@@ -1,0 +1,109 @@
+content loss: 1.17626e+06
+    style loss: 7.83621e+07
+       tv loss: 22956
+    total loss: 7.95602e+07
+Iteration    2/1500
+
+Iteration  101/1500
+  content loss: 2.05095e+06
+    style loss: 851182
+       tv loss: 129816
+    total loss: 3.03237e+06
+Iteration  102/1500
+
+Iteration  201/1500
+  content loss: 1.73922e+06
+    style loss: 627003
+       tv loss: 106663
+    total loss: 2.47211e+06
+Iteration  202/1500
+
+Iteration  301/1500
+  content loss: 1.60315e+06
+    style loss: 592891
+       tv loss: 100406
+    total loss: 2.29746e+06
+Iteration  302/1500
+
+Iteration  401/1500
+  content loss: 1.53194e+06
+    style loss: 537559
+       tv loss: 96779.9
+    total loss: 2.16635e+06
+Iteration  402/1500
+
+Iteration  501/1500
+  content loss: 1.51426e+06
+    style loss: 842973
+       tv loss: 94662.9
+    total loss: 2.45407e+06
+Iteration  502/1500
+
+Iteration  601/1500
+  content loss: 1.4184e+06
+    style loss: 507679
+       tv loss: 90810
+    total loss: 2.01786e+06
+Iteration  602/1500
+
+Iteration  701/1500
+  content loss: 1.40646e+06
+    style loss: 501899
+       tv loss: 90668.5
+    total loss: 1.99969e+06
+Iteration  702/1500
+
+Iteration  801/1500
+  content loss: 1.36143e+06
+    style loss: 498353
+       tv loss: 89373.7
+    total loss: 1.95355e+06
+Iteration  802/1500
+
+Iteration  901/1500
+  content loss: 1.49848e+06
+    style loss: 770292
+       tv loss: 98499.7
+    total loss: 2.36757e+06
+Iteration  902/1500
+
+Iteration 1001/1500
+  content loss: 1.34828e+06
+    style loss: 444175
+       tv loss: 87333.7
+    total loss: 1.88064e+06
+Iteration 1002/1500
+
+Iteration 1101/1500
+  content loss: 1.57363e+06
+    style loss: 1.78164e+06
+       tv loss: 103033
+    total loss: 3.46329e+06
+Iteration 1102/1500
+
+Iteration 1201/1500
+  content loss: 1.3613e+06
+    style loss: 464583
+       tv loss: 88788.4
+    total loss: 1.9107e+06
+Iteration 1202/1500
+
+Iteration 1301/1500
+  content loss: 1.30872e+06
+    style loss: 479985
+       tv loss: 85232.2
+    total loss: 1.87304e+06
+Iteration 1302/1500
+
+Iteration 1401/1500
+  content loss: 1.3733e+06
+    style loss: 609631
+       tv loss: 90894.8
+    total loss: 2.07427e+06
+Iteration 1402/1500
+
+Iteration 1500/1500
+  content loss: 1.28787e+06
+    style loss: 442575
+       tv loss: 85499.7
+    total loss: 1.81727e+06
