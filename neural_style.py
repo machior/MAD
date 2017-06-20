@@ -27,6 +27,10 @@ ITERATIONS = 1000
 VGG_PATH = 'imagenet-vgg-verydeep-19.mat'
 POOLING = 'max'
 
+R_FILTER = 1
+G_FILTER = 1
+B_FILTER = 1
+
 def build_parser():
     parser = ArgumentParser()
     parser.add_argument('--content',
@@ -102,6 +106,15 @@ def build_parser():
     parser.add_argument('--pooling',
             dest='pooling', help='pooling layer configuration: max or avg (default %(default)s)',
             metavar='POOLING', default=POOLING)
+    parser.add_argument('--rFilter',
+            dest='rFilter', help='red filter (0-1) (default %(default))',
+            metavar='R_FILTER', default=R_FILTER)
+    parser.add_argument('--gFilter',
+            dest='gFilter', help='green filter (0-1) (default %(default))',
+            metavar='G_FILTER', default=G_FILTER)
+    parser.add_argument('--bFilter',
+            dest='bFilter', help='blue filter (0-1) (default %(default))',
+            metavar='B_FILTER', default=B_FILTER)
     return parser
 
 
@@ -166,6 +179,8 @@ def main():
         parser.error("To save intermediate images, the checkpoint output "
                      "parameter must contain `%s` (e.g. `foo%s.jpg`)")
 
+
+
     for iteration, image in stylize(
         network=options.network,
         initial=initial,
@@ -196,24 +211,31 @@ def main():
         else:
             output_file = options.output
         if output_file:
-            imsave(output_file, combined_rgb)
+            imsave(output_file, combined_rgb, options.rFilter, options.gFilter, options.bFilter)
 
 
 def imread(path):
     img = scipy.misc.imread(path).astype(np.float)
     if len(img.shape) == 2:
         # grayscale
-        img = np.dstack((0,0,img))
-        # img = np.dstack((img,img,img))
+        img = np.dstack((img,img,img))
     elif img.shape[2] == 4:
         # PNG with alpha channel
         img = img[:,:,:3]
     return img
 
 
-def imsave(path, img):
+def imsave(path, img, rFilter=R_FILTER, gFilter=G_FILTER, bFilter=B_FILTER):
     img = np.clip(img, 0, 255).astype(np.uint8)
-    Image.fromarray(img).save(path, quality=95)
+
+    imgAll = img;
+    imgAll[:, :, 0] = imgAll[:, :, 0] * float(rFilter)
+    imgAll[:, :, 1] = imgAll[:, :, 1] * float(gFilter)
+    imgAll[:, :, 2] = imgAll[:, :, 2] * float(bFilter)
+
+    Image.fromarray(imgAll).save(path, quality=95)
 
 if __name__ == '__main__':
     main()
+
+
